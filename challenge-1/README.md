@@ -22,7 +22,20 @@ Terraform is able to create, modify, and delete resources on infrastructure prov
 
 With this feature, code can be ported across multiple cloud providers and standardized infrastructure can be built on any cloud.
 
-### Run
+### Configure AWS CLI
+
+Refer to [Configuration basics - AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html) for detailed installation and configuration instructions for AWS CLI.
+
+In short, you need to:
+
+- Install AWS CLI on your local machine
+- Create IAM user with proper policies
+- Get the Access Key ID and secret access key of the IAM user
+- On the commane line, execute "aws configure" and add the information requested. You may keep the region as default (recommended for this exercise) and keep output format as default.
+
+Now, proceed to Run Terraform.
+
+### Run Terraform
 
 Go to working directory (inside challenge-1) on a command line and execute following commands.
 
