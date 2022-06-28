@@ -22,3 +22,34 @@ Terraform is able to create, modify, and delete resources on infrastructure prov
 
 With this feature, code can be ported across multiple cloud providers and standardized infrastructure can be built on any cloud.
 
+### Run
+
+Go to working directory (inside challenge-1) on a command line and execute following commands.
+
+#### To initialize a working directory that contains Terraform configuration files, use the terraform init command.
+
+```
+terraform init
+```
+
+#### Terraform fmt is used to rewrite Terraform configuration files using a standard format and style.  
+
+```
+terraform fmt
+```
+
+#### The terraform validate command verifies the configuration files in a directory, referring only to the configuration files.
+
+```
+terraform validate
+```
+
+#### Terraform apply carries out the actions outlined in a Terraform plan.
+
+```
+terraform apply
+```
+
+Terraform apply is most easily used by running it without any arguments, which will trigger it to create an execution plan (as if you had run terraform plan) and require you to approve it before taking the indicated actions.
+
+Enter the value "yes" when prompted on the command line to proceed with terraform execution plan.
