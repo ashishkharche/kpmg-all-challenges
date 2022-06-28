@@ -1,4 +1,4 @@
-# Challenge #3
+# objectkeyvalue #3
 
 ## Problem
 
@@ -24,11 +24,11 @@ We would expect it in any other language apart from elixir.
 ### Run Solution Code
 
 ```
-python challenge.py -o '{"x":{"y":{"z":"1"}}}' -v "x/y"
+python objectkeyvalue.py -o '{"x":{"y":{"z":"1"}}}' -v "x/y"
 ```
 
 ### Run Test
 
 ```
-python test_challenge.py
+python test_objectkeyvalue.py
 ```

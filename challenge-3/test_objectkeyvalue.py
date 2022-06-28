@@ -2,10 +2,10 @@
 import unittest
 import pathlib as pl
 
-from challenge import get_object as go
+from objectkeyvalue import get_object as go
 
 
-prg = './challenge.py'
+prg = './objectkeyvalue.py'
 
 
 class TestCaseBase(unittest.TestCase):
