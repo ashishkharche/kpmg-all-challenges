@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-import os
-from subprocess import getstatusoutput, getoutput
-
-
 import unittest
 import pathlib as pl
 
@@ -10,6 +6,7 @@ from challenge import get_object as go
 
 
 prg = './challenge.py'
+
 
 class TestCaseBase(unittest.TestCase):
     def assertIsFile(self, path):
@@ -21,10 +18,9 @@ class TestCaseBase(unittest.TestCase):
         self.assertIsFile(path)
 
     def test_go(self):
-        self.assertEqual(go("x", '{"x": {"y": {"z": "1"}}}'), {'y': {'z': '1'}}, "Should be {'y': {'z': '1'}}")
-
+        self.assertEqual(go("x", '{"x": {"y": {"z": "1"}}}'), {
+                         'y': {'z': '1'}}, "Should be {'y': {'z': '1'}}")
 
 
 if __name__ == '__main__':
     unittest.main()
- 

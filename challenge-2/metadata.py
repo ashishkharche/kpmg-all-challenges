@@ -19,15 +19,18 @@ def json_check(url, path_list):
             output[each] = text
     return output
 
+
 def metadata_function():
     path = ["meta-data/"]
     result = json_check(aws_metadata_url, path)
     return result
 
+
 def get_json():
     metadata = metadata_function()
     get_json = json.dumps(metadata, indent=4, sort_keys=True)
     return get_json
+
 
 def validate_json(value):
     try:
