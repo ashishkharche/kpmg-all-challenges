@@ -21,3 +21,6 @@ Terraform has the ability to use both low-level components such as compute insta
 Terraform is able to create, modify, and delete resources on infrastructure providers such as Amazon Web Services, Google Cloud Platform, Microsoft Azure, as well as PaaS and SaaS services.
 
 With this feature, code can be ported across multiple cloud providers and standardized infrastructure can be built on any cloud.
+
+### Tiers
+
