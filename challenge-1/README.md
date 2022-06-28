@@ -31,7 +31,7 @@ In short, you need to:
 - Install AWS CLI on your local machine
 - Create IAM user with proper policies
 - Get the Access Key ID and secret access key of the IAM user
-- On the commane line, execute "aws configure" and add the information requested. You may keep the region as default (recommended for this exercise) and keep output format as default.
+- On the commane line, execute "aws configure" and add the information requested. You may keep the region as default (recommended for this exercise) and keep output format as default
 
 Now, proceed to Run Terraform.
 

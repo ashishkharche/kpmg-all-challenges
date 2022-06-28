@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 
-module "vpccreate" {
+module "vpc_build" {
   source              = "./modules/vpc"
   vpc_cdir_block      = var.aws_cidr_block
   public_subnet_1     = var.aws_public_subnet_1
@@ -28,46 +28,46 @@ module "vpccreate" {
 }
 
 
-module "web-stack" {
+module "web-entity" {
   source          = "./modules/ec2"
   entity_name       = "web"
   ami            = var.ami_id
   instance_type   = var.aws_instance_type
-  vpc_id          = module.vpccreate.vpc_id
-  public_subnet1  = module.vpccreate.out_publicsubnet1
-  public_subnet2  = module.vpccreate.out_publicsubnet2
-  private_subnet3 = module.vpccreate.out_privatesubnet3
-  private_subnet4 = module.vpccreate.out_privatesubnet4
-  out_bastion_ssh = module.vpccreate.out_bastion_ssh
+  vpc_id          = module.vpc_build.vpc_id
+  public_subnet1  = module.vpc_build.out_publicsubnet1
+  public_subnet2  = module.vpc_build.out_publicsubnet2
+  private_subnet3 = module.vpc_build.out_privatesubnet3
+  private_subnet4 = module.vpc_build.out_privatesubnet4
+  out_bastion_ssh = module.vpc_build.out_bastion_ssh
   min_asgp        = var.min_asg_value
   max_asgp        = var.max_asg_value
-  out_alb_sg      = module.vpccreate.out_alb_sg
-  out_ec2_sg      = module.vpccreate.out_ec2_sg
+  out_alb_sg      = module.vpc_build.out_alb_sg
+  out_ec2_sg      = module.vpc_build.out_ec2_sg
   user_data_file  = var.ec2_user_data
 }
 
 
-module "app-stack" {
+module "app-entity" {
   source          = "./modules/ec2"
   entity_name       = "app"
   ami            = var.ami_id
   instance_type   = var.aws_instance_type
-  vpc_id          = module.vpccreate.vpc_id
-  public_subnet1  = module.vpccreate.out_publicsubnet1
-  public_subnet2  = module.vpccreate.out_publicsubnet2
-  private_subnet3 = module.vpccreate.out_privatesubnet3
-  private_subnet4 = module.vpccreate.out_privatesubnet4
-  out_bastion_ssh = module.vpccreate.out_bastion_ssh
+  vpc_id          = module.vpc_build.vpc_id
+  public_subnet1  = module.vpc_build.out_publicsubnet1
+  public_subnet2  = module.vpc_build.out_publicsubnet2
+  private_subnet3 = module.vpc_build.out_privatesubnet3
+  private_subnet4 = module.vpc_build.out_privatesubnet4
+  out_bastion_ssh = module.vpc_build.out_bastion_ssh
   min_asgp        = var.min_asg_value
   max_asgp        = var.max_asg_value
-  out_alb_sg      = module.vpccreate.out_alb_sg
-  out_ec2_sg      = module.vpccreate.out_ec2_sg
+  out_alb_sg      = module.vpc_build.out_alb_sg
+  out_ec2_sg      = module.vpc_build.out_ec2_sg
   user_data_file  = var.ec2_user_data
 }
 
 
-module "db-stack" {
-  source                    = "./modules//rds"
+module "db-entity" {
+  source                    = "./modules/rds"
   db_allocated_storage      = var.mysql_db_allocated_storage
   db_storage_type           = var.mysql_db_storage_type
   db_engine                 = var.mysql_db_engine
@@ -78,6 +78,6 @@ module "db-stack" {
   db_password               = var.mysql_db_password
   db_multi_az               = var.mysql_db_multi_az
   db_port                   = var.mysql_db_port
-  db_subnetgroup_name       = module.vpccreate.out_rdssubnetgroup
-  db_vpc_security_group_ids = module.vpccreate.out_rdsmysqlsg
+  db_subnetgroup_name       = module.vpc_build.out_rdssubnetgroup
+  db_vpc_security_group_ids = module.vpc_build.out_rdsmysqlsg
 }
