@@ -23,6 +23,8 @@ We would expect it in any other language apart from elixir.
 
 ### Run Solution Code
 
+Ensure you have python 3 in your path and not python 2. Check using `python -v`. 
+
 ```
 python objectkeyvalue.py -o '{"x":{"y":{"z":"1"}}}' -k "x/y"
 ```

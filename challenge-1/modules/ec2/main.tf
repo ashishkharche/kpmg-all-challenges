@@ -78,8 +78,3 @@ resource "aws_lb_listener" "listener_build" {
     target_group_arn = aws_lb_target_group.tg_build.arn
   }
 }
-
-resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
-  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDD0SBPDc86IP5KaDFPtfD10O3t6LPxEV0Ct1jNCBB7lwzrnCJua9qVSQzqkz4DpJOIT9h91QQ04Stnvx7EjIKXJzD+elXtuhIwVtz5Y5GQ/7dtLKo1BqDPLqW9i0vD3T5x2xp+D0MU2OwuLPEQqw87tt2icQuWJh6fYD2N7ubWQMjulPpk5qt9lmLL2orCxyyPfPG27QqVD7YpV/2Vju0/99uDn0Idp3tLD6ltvmvj1gBMRO4I8xhLlbKi1R63N44/EirgO96KLCdSzBbG+WYWRCfGoNs7XhGtSJbmyi7CtfGwoIR3fXx+hMs5DD+JmgeuCVe0WBH59gi9X3ShKinwMLcT7VqUgflMbEvPHh7Kp5aHT71Inm0w9TmMEfu8wVoWCNejUn0o9JOXZ/YQcNnkP/S8wRX54Ahm5D7o1Sco3GPjMyR8Y+Ac67q74Wmv6tpWFNgs28KV/mAqjqb7Lje6S1juII5aZzcXwFtvVKI0khfgbaSGksAQYOdogz/+1uLA3iyZ4VER6zzeHtaPgL2zCx6itOgmg1wqUro8E5u6o/rSLaWNudP7xvz3UU4aaDP9lmGycVKuOlELZN1JbTwCkh9npRQgTk6svfTQ7kSzjd6yhsZhk0LB6ddKk49Tf7nJAhWQzx33yUs5JMrmgks+kWJRyx3C+NmDrNk/SpKZ6w== jiayo@xiatylo"
-}
