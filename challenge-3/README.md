@@ -24,8 +24,12 @@ We would expect it in any other language apart from elixir.
 ### Run Solution Code
 
 ```
-python objectkeyvalue.py -o '{"x":{"y":{"z":"1"}}}' -v "x/y"
+python objectkeyvalue.py -o '{"x":{"y":{"z":"1"}}}' -k "x/y"
 ```
+
+**-o**: Object
+
+**-k**: Key
 
 ### Run Test
 
