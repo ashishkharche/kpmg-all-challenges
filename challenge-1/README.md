@@ -22,5 +22,3 @@ Terraform is able to create, modify, and delete resources on infrastructure prov
 
 With this feature, code can be ported across multiple cloud providers and standardized infrastructure can be built on any cloud.
 
-### Tiers
-
